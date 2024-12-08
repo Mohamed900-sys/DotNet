@@ -1,0 +1,50 @@
+﻿@model List<Subscription>
+@{
+}
+
+<h2 class="text-center mb-5">
+	List of subscriptions
+</h2>
+
+<div class="row mb-5">
+	<div class="col">
+		<a class="btn btn-primary" asp-controller="Subscription" asp-action="Create">
+			New Subscription
+		</a>
+	</div>
+	<div class="col">
+
+	</div>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>CreatedAt</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var subscription in Model)
+		{
+			<tr>
+				<td>@subscription.Id</td>
+				<td>@subscription.Name</td>
+				<td>@subscription.Description</td>
+				<td>@(subscription.Price) DT</td>
+				<td>@subscription.CreatedAt.ToString("dd/MM/yyyy")</td>
+				<td style="white-space:nowrap">
+					<a class="btn btn-primary btn-sm" asp-controller="Subscription" asp-action="Edit"
+					   asp-route-id="@subscription.Id"> Edit</a>
+					<a class="btn btn-danger btn-sm" asp-controller="Subscription" asp-action="Delete"
+					   asp-route-id="@subscription.Id" onclick="return confirm('Are you sure?')"> Delete</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
