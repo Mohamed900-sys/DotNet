@@ -134,3 +134,11 @@ C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\obj\Debug\net8.0\refint\Pr
 C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\obj\Debug\net8.0\ProjetDotNet.pdb
 C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\obj\Debug\net8.0\ProjetDotNet.genruntimeconfig.cache
 C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\obj\Debug\net8.0\ref\ProjetDotNet.dll
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\obj\Debug\net8.0\ProjetDotNet.sourcelink.json
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\medam\source\repos\ProjetDotNet\ProjetDotNet\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
