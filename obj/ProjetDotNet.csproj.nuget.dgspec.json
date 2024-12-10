@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\medam\\source\\repos\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj": {}
+    "C:\\Users\\amine\\OneDrive\\Bureau\\cours de soir\\revision\\.net\\projetFitnessWebApp\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\medam\\source\\repos\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj": {
+    "C:\\Users\\amine\\OneDrive\\Bureau\\cours de soir\\revision\\.net\\projetFitnessWebApp\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\medam\\source\\repos\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj",
+        "projectUniqueName": "C:\\Users\\amine\\OneDrive\\Bureau\\cours de soir\\revision\\.net\\projetFitnessWebApp\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj",
         "projectName": "ProjetDotNet",
-        "projectPath": "C:\\Users\\medam\\source\\repos\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj",
-        "packagesPath": "C:\\Users\\medam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\medam\\source\\repos\\ProjetDotNet\\ProjetDotNet\\obj\\",
+        "projectPath": "C:\\Users\\amine\\OneDrive\\Bureau\\cours de soir\\revision\\.net\\projetFitnessWebApp\\ProjetDotNet\\ProjetDotNet\\ProjetDotNet.csproj",
+        "packagesPath": "C:\\Users\\amine\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amine\\OneDrive\\Bureau\\cours de soir\\revision\\.net\\projetFitnessWebApp\\ProjetDotNet\\ProjetDotNet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\medam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amine\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
