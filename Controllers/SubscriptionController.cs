@@ -4,7 +4,9 @@ using ProjetDotNet.Service;
 
 namespace ProjetDotNet.Controllers
 {
-	public class SubscriptionController : Controller
+	[ApiController]
+	[Route("api/[controller]")]
+	public class SubscriptionController : ControllerBase
 	{
 		private readonly ApplicationDbContext context;
 
@@ -13,26 +15,36 @@ namespace ProjetDotNet.Controllers
 			this.context = context;
 		}
 
-
-		public IActionResult Index()
+		[HttpGet]
+		[Route("list")]
+		public IActionResult GetAllSubscriptions()
 		{
-			var subscriptions = context.Subscriptions.OrderByDescending(p => p.Id).ToList();
-			return View(subscriptions);
+			var subscriptions = context.Subscriptions.OrderByDescending(s => s.Id).ToList();
+			return Ok(subscriptions); // Return JSON response
 		}
 
-		public IActionResult Create()
+		[HttpGet]
+		[Route("details/{id}")]
+		public IActionResult GetSubscriptionById(int id)
 		{
-			return View();
+			var subscription = context.Subscriptions.Find(id);
+			if (subscription == null)
+			{
+				return NotFound(new { Message = "Subscription not found" });
+			}
+			return Ok(subscription);
 		}
+
 		[HttpPost]
-		public IActionResult Create(SubscriptionDto subscriptionDto)
+		[Route("add")]
+		public IActionResult AddSubscription([FromBody] SubscriptionDto subscriptionDto)
 		{
 			if (!ModelState.IsValid)
 			{
-				return View(subscriptionDto);
+				return BadRequest(ModelState);
 			}
-			// Save the new subscription infos
-			Subscription subscription = new Subscription()
+
+			Subscription subscription = new Subscription
 			{
 				Name = subscriptionDto.Name,
 				Description = subscriptionDto.Description,
@@ -42,71 +54,46 @@ namespace ProjetDotNet.Controllers
 			context.Subscriptions.Add(subscription);
 			context.SaveChanges();
 
-			return RedirectToAction("Index", "Subscription");
+			return CreatedAtAction(nameof(GetSubscriptionById), new { id = subscription.Id }, subscription);
 		}
 
-		public IActionResult Edit(int id)
+		[HttpPut]
+		[Route("update/{id}")]
+		public IActionResult UpdateSubscription(int id, [FromBody] SubscriptionDto subscriptionDto)
 		{
 			var subscription = context.Subscriptions.Find(id);
 			if (subscription == null)
 			{
-				return RedirectToAction("Index", "Subscription");
+				return NotFound(new { Message = "Subscription not found" });
 			}
-			// Save the new subscription infos
-			var subscriptionDto = new SubscriptionDto()
-			{
-				Name = subscription.Name,
-				Description = subscription.Description,
-				Price = subscription.Price,
-			};
-			ViewData["SubscriptionId"] = subscription.Id;
-			ViewData["CreatedAt"] = subscription.CreatedAt.ToString("dd/MM/yyyy");
-			return View();
 
-			//return RedirectToAction("Index", "Subscription");
-		}
-		[HttpPost]
-		public IActionResult Edit(int id, SubscriptionDto subscriptionDto)
-		{
-			var subscription = context.Subscriptions.Find(id);
-			if (subscription == null)
-			{
-				return RedirectToAction("Index", "Subscription");
-
-			}
 			if (!ModelState.IsValid)
 			{
-				ViewData["SubscriptionId"] = subscription.Id;
-				ViewData["CreatedAt"] = subscription.CreatedAt.ToString("dd/MM/yyyy");
-				return View(subscriptionDto);
+				return BadRequest(ModelState);
 			}
 
-			// Update the subscription infos (get object by id from DB , then modify its values and save it (because dto do not contain id and createdAt..))
 			subscription.Name = subscriptionDto.Name;
 			subscription.Description = subscriptionDto.Description;
 			subscription.Price = subscriptionDto.Price;
-
-
 			context.SaveChanges();
 
-			return RedirectToAction("Index", "Subscription");
+			return NoContent(); // Indicates successful update
 		}
 
-		public IActionResult Delete(int id)
+		[HttpDelete]
+		[Route("delete/{id}")]
+		public IActionResult DeleteSubscription(int id)
 		{
 			var subscription = context.Subscriptions.Find(id);
 			if (subscription == null)
 			{
-				return RedirectToAction("Index", "Subscription");
-
+				return NotFound(new { Message = "Subscription not found" });
 			}
-			// delete the subscription
+
 			context.Subscriptions.Remove(subscription);
 			context.SaveChanges();
-			return RedirectToAction("Index", "Subscription");
+
+			return Ok(new { Message = "Subscription deleted successfully" });
 		}
-
-
-
 	}
 }
